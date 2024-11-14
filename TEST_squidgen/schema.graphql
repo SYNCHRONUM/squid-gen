@@ -1,0 +1,196 @@
+"""
+This is GraphQL schema file. It was generated automatically by the squid-gen tool.
+Each type corresponds to an entity in the database, a GraphQL type and an event/function on the contract.
+Feel free to change the schema to fit your needs, and run `sqd codegen` to regenerate the models.
+See more here: https://docs.subsquid.io/sdk/reference/schema-file/
+"""
+
+type Transaction @entity {
+    id: ID!
+    blockNumber: Int @index
+    blockTimestamp: DateTime! @index
+    hash: String! @index
+    to: String @index
+    from: String @index
+    status: Int @index
+}
+
+type MyContractEventApproval @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    owner: String! @index
+    spender: String! @index
+    value: BigInt!
+}
+
+type MyContractEventAuthorizationCanceled @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    authorizer: String! @index
+    nonce: String! @index
+}
+
+type MyContractEventAuthorizationUsed @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    authorizer: String! @index
+    nonce: String! @index
+}
+
+type MyContractEventBlacklisted @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    account: String! @index
+}
+
+type MyContractEventBlacklisterChanged @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    newBlacklister: String! @index
+}
+
+type MyContractEventBurn @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    burner: String! @index
+    amount: BigInt!
+}
+
+type MyContractEventMasterMinterChanged @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    newMasterMinter: String! @index
+}
+
+type MyContractEventMint @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    minter: String! @index
+    to: String! @index
+    amount: BigInt!
+}
+
+type MyContractEventMinterConfigured @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    minter: String! @index
+    minterAllowedAmount: BigInt!
+}
+
+type MyContractEventMinterRemoved @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    oldMinter: String! @index
+}
+
+type MyContractEventOwnershipTransferred @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    previousOwner: String!
+    newOwner: String!
+}
+
+type MyContractEventPause @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+}
+
+type MyContractEventPauserChanged @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    newAddress: String! @index
+}
+
+type MyContractEventRescuerChanged @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    newRescuer: String! @index
+}
+
+type MyContractEventTransfer @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    from: String! @index
+    to: String! @index
+    value: BigInt!
+}
+
+type MyContractEventUnBlacklisted @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    account: String! @index
+}
+
+type MyContractEventUnpause @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+}
+

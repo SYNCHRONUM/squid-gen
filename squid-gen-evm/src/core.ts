@@ -32,11 +32,11 @@ export class CoreCodegen {
                 this.out.line('// Use ctx.log for logging. Avoid using `console.log` in squids')
                 this.out.line(`ctx.log.info(\`Received block #\${block.header.height} with \${block.transactions.length} transactions\`)`)
                 this.out.line()
-                targetPrinter.printFragmentSave(block, [
-                    `block.header.id`,
-                    `block.header.height`,
-                    `new Date(block.header.timestamp)`,
-                ])
+                // targetPrinter.printFragmentSave(block, [
+                //     `block.header.id`,
+                //     `block.header.height`,
+                //     `new Date(block.header.timestamp)`,
+                // ])
                 this.out.line()
                 this.out.block(`for (let log of block.logs)`, () => {
                     for (let contract of this.options.contracts) {

@@ -35,7 +35,7 @@ export async function generateSquid(config: Config) {
 
     logger.info(`running typegen...`)
     let contracts: SquidContract[] = []
-    let fragments: Fragment[] = [block, transaction]
+    let fragments: Fragment[] = [transaction]
     for (let contract of config.contracts) {
         logger.info(`processing "${contract.name}" contract...`)
 
